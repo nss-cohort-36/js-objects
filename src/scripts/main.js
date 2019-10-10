@@ -190,3 +190,45 @@ for(let i = 0; i < boardedAnimals.length; i++) {
 
 console.log("Zipcode", kennel.address["zipcode"])
 console.log("Locations: ", kennel.address.city[0], kennel["address"]["city"][1])
+
+const nashvilleSoftwareSchool = {
+  founded: 2012,
+  director: "John Wark",
+  instructors: {
+      fullTime: ["Jisie", "Brenda", "Steve", "Joe", "Andy"],
+      partTime: ["Zoe", "Nathan"]
+  },
+  address: "500 Interstate Blvd. S"
+}
+
+// Lightning Exercise 1: Output the names of the part-time instructors followed by the names of the full-time instructors in the console.
+console.log("All instructors")
+
+const partTimeInstructors = nashvilleSoftwareSchool.instructors.partTime
+
+for(let i = 0; i < partTimeInstructors.length; i++) {
+  console.log(partTimeInstructors[i])
+}
+
+const fullTimeInstructors = nashvilleSoftwareSchool.instructors.fullTime
+
+for(let i = 0; i < fullTimeInstructors.length; i++) {
+  console.log(fullTimeInstructors[i])
+}
+
+// For in loop to iterate over the instructors object
+
+const instructorsObj = nashvilleSoftwareSchool.instructors
+for(let key in instructorsObj) {
+  // console.log(instructorsObj[key])
+  const instructorArray = instructorsObj[key]
+  for(let i = 0; i < instructorArray.length; i++) {
+    console.log(instructorArray[i])
+  }
+}
+
+// Lightning Exercise 2: Output only Andy and Zoe in the console.
+ 
+// console.log("Andy: ", fullTimeInstructors[4])
+console.log("Andy: ", fullTimeInstructors[fullTimeInstructors.length - 1])
+console.log("Zoe: ", nashvilleSoftwareSchool.instructors.partTime[0])
