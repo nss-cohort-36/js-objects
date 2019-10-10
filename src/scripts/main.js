@@ -109,57 +109,84 @@
 // console.log(wardrobeDesc)
 
 // Square bracket notation
-const lassie = {
-  age: 7,
-  breed: "Collie",
-  "hair color": "White and Brown"
+// const lassie = {
+//   age: 7,
+//   breed: "Collie",
+//   "hair color": "White and Brown"
+// }
+
+// console.log("Dot notation", lassie.breed)
+// console.log("Square bracket notation", lassie["breed"], lassie["hair color"])
+
+// // Breed is the key you want to get the value of in the object below
+// const keyToLookup = "breed"
+
+// // First, make JavaScript evaluate the variable and give us its value
+// console.log(keyToLookup)
+
+// // You have to use square brackets here because you want to evaluate the value in the variable keyToLookup
+// console.log(lassie[keyToLookup])
+
+// // Adding new key value pairs to object using dot notation and square bracket notation
+
+// lassie.favoriteToy = "Frisbee"
+
+// console.log("Lassie with fav toy", lassie)
+
+// lassie["well"] = "Real deep..."
+
+// console.log("Lassie with well", lassie)
+
+// const empireStateBuilding = {
+//   stories: 103,
+//   height: 1453,
+//   address: "350 Fifth Avenue, Manhattan, New York 10118",
+//   squareFeet: 2768591,
+//   constructionDate: 1931,
+//   cost: 40948900,
+//   owner: "Empire State Realty Trust",
+//   eastWestLength: 424,
+//   northSouthLength: 187,
+//   architect: "Shreve, Lamb & Harmon"
+// }
+
+// // Lightning Exercises 1: Use dot notation to output all of the dimensions of the Empire State Building to the console.
+
+// console.log(`The empire state building is ${empireStateBuilding.height} high with ${empireStateBuilding.stories} stories. The east west length is ${empireStateBuilding.eastWestLength} and the north south length is ${empireStateBuilding.northSouthLength}. It is ${empireStateBuilding.squareFeet} square footage.`)
+
+// // Lightning Exercises 2: Use square bracket notation to output the remaining 5 properties to the console. Create 5 variables first with the keys as their values. Use those variables to look up the values.
+
+// const addressKey = "address"
+// const constructionKey = "constructionDate"
+// const ownerKey = "owner"
+// const costKey = "cost"
+// const architectKey = "architect"
+
+// console.log(`The empire state building is at ${empireStateBuilding[addressKey]}. It was built in ${empireStateBuilding[constructionKey]} by ${empireStateBuilding[architectKey]}. It cost ${empireStateBuilding[costKey]} and is owned by ${empireStateBuilding[ownerKey]}.`)
+
+//Arrays and Objects as Values
+
+const kennel = {
+  name: "Nashville North Kennels",
+  address: {
+    street: "100 Demonbreun Road",
+    state: "TN",
+    city: ["Nashville", "Franklin"],
+    zipcode: 37203
+  },
+  manager: "Harper Frankstone",
+  capacity: 50,
+  currentAnimals: ["Jet", "Snickers", "Blue", "Jacks", "Flap", "Barnum"]
 }
 
-console.log("Dot notation", lassie.breed)
-console.log("Square bracket notation", lassie["breed"], lassie["hair color"])
+console.log("Second animal", kennel.currentAnimals[1])
 
-// Breed is the key you want to get the value of in the object below
-const keyToLookup = "breed"
+console.log("All animals")
+const boardedAnimals = kennel.currentAnimals
 
-// First, make JavaScript evaluate the variable and give us its value
-console.log(keyToLookup)
-
-// You have to use square brackets here because you want to evaluate the value in the variable keyToLookup
-console.log(lassie[keyToLookup])
-
-// Adding new key value pairs to object using dot notation and square bracket notation
-
-lassie.favoriteToy = "Frisbee"
-
-console.log("Lassie with fav toy", lassie)
-
-lassie["well"] = "Real deep..."
-
-console.log("Lassie with well", lassie)
-
-const empireStateBuilding = {
-  stories: 103,
-  height: 1453,
-  address: "350 Fifth Avenue, Manhattan, New York 10118",
-  squareFeet: 2768591,
-  constructionDate: 1931,
-  cost: 40948900,
-  owner: "Empire State Realty Trust",
-  eastWestLength: 424,
-  northSouthLength: 187,
-  architect: "Shreve, Lamb & Harmon"
+for(let i = 0; i < boardedAnimals.length; i++) {
+  console.log(boardedAnimals[i])
 }
 
-// Lightning Exercises 1: Use dot notation to output all of the dimensions of the Empire State Building to the console.
-
-console.log(`The empire state building is ${empireStateBuilding.height} high with ${empireStateBuilding.stories} stories. The east west length is ${empireStateBuilding.eastWestLength} and the north south length is ${empireStateBuilding.northSouthLength}. It is ${empireStateBuilding.squareFeet} square footage.`)
-
-// Lightning Exercises 2: Use square bracket notation to output the remaining 5 properties to the console. Create 5 variables first with the keys as their values. Use those variables to look up the values.
-
-const addressKey = "address"
-const constructionKey = "constructionDate"
-const ownerKey = "owner"
-const costKey = "cost"
-const architectKey = "architect"
-
-console.log(`The empire state building is at ${empireStateBuilding[addressKey]}. It was built in ${empireStateBuilding[constructionKey]} by ${empireStateBuilding[architectKey]}. It cost ${empireStateBuilding[costKey]} and is owned by ${empireStateBuilding[ownerKey]}.`)
+console.log("Zipcode", kennel.address["zipcode"])
+console.log("Locations: ", kennel.address.city[0], kennel["address"]["city"][1])
